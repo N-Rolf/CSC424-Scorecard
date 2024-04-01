@@ -18,13 +18,15 @@ namespace CSC424_ScoreCard
             InitializeComponent();
         }
 
+        //TODO Table for display of stats subject to change. 
+
         #region Shot made buttons
 
         #region 2pt make/miss Buttons
         private void _2ptMade_Click(object sender, EventArgs e)
         {
 
-
+            
         }
 
         private void _2ptMissed_Click(object sender, EventArgs e)
