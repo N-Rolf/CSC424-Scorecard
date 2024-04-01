@@ -1,0 +1,10 @@
+C:\Users\nelso\Source\Repos\N-Rolf\CSC424-Scorecard\CSC424-ScoreCard\CSC424-ScoreCard\bin\Debug\CSC424-ScoreCard.exe.config
+C:\Users\nelso\Source\Repos\N-Rolf\CSC424-Scorecard\CSC424-ScoreCard\CSC424-ScoreCard\bin\Debug\CSC424-ScoreCard.exe
+C:\Users\nelso\Source\Repos\N-Rolf\CSC424-Scorecard\CSC424-ScoreCard\CSC424-ScoreCard\bin\Debug\CSC424-ScoreCard.pdb
+C:\Users\nelso\Source\Repos\N-Rolf\CSC424-Scorecard\CSC424-ScoreCard\CSC424-ScoreCard\obj\Debug\CSC424-ScoreCard.csproj.AssemblyReference.cache
+C:\Users\nelso\Source\Repos\N-Rolf\CSC424-Scorecard\CSC424-ScoreCard\CSC424-ScoreCard\obj\Debug\CSC424_ScoreCard.Form1.resources
+C:\Users\nelso\Source\Repos\N-Rolf\CSC424-Scorecard\CSC424-ScoreCard\CSC424-ScoreCard\obj\Debug\CSC424_ScoreCard.Properties.Resources.resources
+C:\Users\nelso\Source\Repos\N-Rolf\CSC424-Scorecard\CSC424-ScoreCard\CSC424-ScoreCard\obj\Debug\CSC424-ScoreCard.csproj.GenerateResource.cache
+C:\Users\nelso\Source\Repos\N-Rolf\CSC424-Scorecard\CSC424-ScoreCard\CSC424-ScoreCard\obj\Debug\CSC424-ScoreCard.csproj.CoreCompileInputs.cache
+C:\Users\nelso\Source\Repos\N-Rolf\CSC424-Scorecard\CSC424-ScoreCard\CSC424-ScoreCard\obj\Debug\CSC424-ScoreCard.exe
+C:\Users\nelso\Source\Repos\N-Rolf\CSC424-Scorecard\CSC424-ScoreCard\CSC424-ScoreCard\obj\Debug\CSC424-ScoreCard.pdb
