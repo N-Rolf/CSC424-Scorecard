@@ -58,11 +58,18 @@
             this._player13 = new System.Windows.Forms.Button();
             this._player12 = new System.Windows.Forms.Button();
             this._player11 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.TabPanel = new System.Windows.Forms.TabControl();
             this.TabGameStats = new System.Windows.Forms.TabPage();
             this.GameStatTable = new System.Windows.Forms.DataGridView();
+            this.gamePlayernameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gamePointsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gameAssistsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gameReboundsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gameStealsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gameBlocksColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gameTurnoversColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gameFieldGoalPercentColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TabSeasonStats = new System.Windows.Forms.TabPage();
             this.SeasonStatTable = new System.Windows.Forms.DataGridView();
             this.seasonPlayerNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,14 +80,14 @@
             this.seasonBlockColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.seasonTurnoverColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fieldGoalPercentColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gamePlayernameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gamePointsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gameAssistsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gameReboundsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gameStealsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gameBlocksColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gameTurnoversColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gameFieldGoalPercentColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbl_H = new System.Windows.Forms.Label();
+            this.lbl_A = new System.Windows.Forms.Label();
+            this.lblHomeScore = new System.Windows.Forms.Label();
+            this.lblAwayScore = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this._oppnt2ptMade = new System.Windows.Forms.Button();
+            this._oppnt3ptMade = new System.Windows.Forms.Button();
+            this._oppntFreethrwMade = new System.Windows.Forms.Button();
             this.TabPanel.SuspendLayout();
             this.TabGameStats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GameStatTable)).BeginInit();
@@ -237,9 +244,9 @@
             // 
             // _player1
             // 
-            this._player1.Location = new System.Drawing.Point(10, 280);
+            this._player1.Location = new System.Drawing.Point(9, 280);
             this._player1.Name = "_player1";
-            this._player1.Size = new System.Drawing.Size(139, 48);
+            this._player1.Size = new System.Drawing.Size(115, 48);
             this._player1.TabIndex = 14;
             this._player1.Text = "player1";
             this._player1.UseVisualStyleBackColor = true;
@@ -247,9 +254,9 @@
             // 
             // _player2
             // 
-            this._player2.Location = new System.Drawing.Point(151, 280);
+            this._player2.Location = new System.Drawing.Point(130, 280);
             this._player2.Name = "_player2";
-            this._player2.Size = new System.Drawing.Size(139, 48);
+            this._player2.Size = new System.Drawing.Size(115, 48);
             this._player2.TabIndex = 15;
             this._player2.Text = "player2";
             this._player2.UseVisualStyleBackColor = true;
@@ -257,9 +264,9 @@
             // 
             // _player3
             // 
-            this._player3.Location = new System.Drawing.Point(292, 280);
+            this._player3.Location = new System.Drawing.Point(251, 280);
             this._player3.Name = "_player3";
-            this._player3.Size = new System.Drawing.Size(139, 48);
+            this._player3.Size = new System.Drawing.Size(115, 48);
             this._player3.TabIndex = 16;
             this._player3.Text = "player3";
             this._player3.UseVisualStyleBackColor = true;
@@ -267,9 +274,9 @@
             // 
             // _player4
             // 
-            this._player4.Location = new System.Drawing.Point(433, 280);
+            this._player4.Location = new System.Drawing.Point(372, 280);
             this._player4.Name = "_player4";
-            this._player4.Size = new System.Drawing.Size(139, 48);
+            this._player4.Size = new System.Drawing.Size(115, 48);
             this._player4.TabIndex = 17;
             this._player4.Text = "player4";
             this._player4.UseVisualStyleBackColor = true;
@@ -277,9 +284,9 @@
             // 
             // _player5
             // 
-            this._player5.Location = new System.Drawing.Point(574, 280);
+            this._player5.Location = new System.Drawing.Point(493, 280);
             this._player5.Name = "_player5";
-            this._player5.Size = new System.Drawing.Size(139, 48);
+            this._player5.Size = new System.Drawing.Size(115, 48);
             this._player5.TabIndex = 18;
             this._player5.Text = "player5";
             this._player5.UseVisualStyleBackColor = true;
@@ -287,9 +294,9 @@
             // 
             // _player10
             // 
-            this._player10.Location = new System.Drawing.Point(574, 334);
+            this._player10.Location = new System.Drawing.Point(493, 334);
             this._player10.Name = "_player10";
-            this._player10.Size = new System.Drawing.Size(139, 48);
+            this._player10.Size = new System.Drawing.Size(115, 48);
             this._player10.TabIndex = 23;
             this._player10.Text = "player10";
             this._player10.UseVisualStyleBackColor = true;
@@ -297,9 +304,9 @@
             // 
             // _player9
             // 
-            this._player9.Location = new System.Drawing.Point(433, 334);
+            this._player9.Location = new System.Drawing.Point(372, 334);
             this._player9.Name = "_player9";
-            this._player9.Size = new System.Drawing.Size(139, 48);
+            this._player9.Size = new System.Drawing.Size(115, 48);
             this._player9.TabIndex = 22;
             this._player9.Text = "player9";
             this._player9.UseVisualStyleBackColor = true;
@@ -307,9 +314,9 @@
             // 
             // _player8
             // 
-            this._player8.Location = new System.Drawing.Point(292, 334);
+            this._player8.Location = new System.Drawing.Point(251, 334);
             this._player8.Name = "_player8";
-            this._player8.Size = new System.Drawing.Size(139, 48);
+            this._player8.Size = new System.Drawing.Size(115, 48);
             this._player8.TabIndex = 21;
             this._player8.Text = "player8";
             this._player8.UseVisualStyleBackColor = true;
@@ -317,9 +324,9 @@
             // 
             // _player7
             // 
-            this._player7.Location = new System.Drawing.Point(151, 334);
+            this._player7.Location = new System.Drawing.Point(130, 334);
             this._player7.Name = "_player7";
-            this._player7.Size = new System.Drawing.Size(139, 48);
+            this._player7.Size = new System.Drawing.Size(115, 48);
             this._player7.TabIndex = 20;
             this._player7.Text = "player7";
             this._player7.UseVisualStyleBackColor = true;
@@ -327,9 +334,9 @@
             // 
             // _player6
             // 
-            this._player6.Location = new System.Drawing.Point(10, 334);
+            this._player6.Location = new System.Drawing.Point(9, 334);
             this._player6.Name = "_player6";
-            this._player6.Size = new System.Drawing.Size(139, 48);
+            this._player6.Size = new System.Drawing.Size(115, 48);
             this._player6.TabIndex = 19;
             this._player6.Text = "player6";
             this._player6.UseVisualStyleBackColor = true;
@@ -337,9 +344,9 @@
             // 
             // _player15
             // 
-            this._player15.Location = new System.Drawing.Point(574, 388);
+            this._player15.Location = new System.Drawing.Point(493, 388);
             this._player15.Name = "_player15";
-            this._player15.Size = new System.Drawing.Size(139, 48);
+            this._player15.Size = new System.Drawing.Size(115, 48);
             this._player15.TabIndex = 28;
             this._player15.Text = "player15";
             this._player15.UseVisualStyleBackColor = true;
@@ -347,9 +354,9 @@
             // 
             // _player14
             // 
-            this._player14.Location = new System.Drawing.Point(433, 388);
+            this._player14.Location = new System.Drawing.Point(372, 388);
             this._player14.Name = "_player14";
-            this._player14.Size = new System.Drawing.Size(139, 48);
+            this._player14.Size = new System.Drawing.Size(115, 48);
             this._player14.TabIndex = 27;
             this._player14.Text = "player14";
             this._player14.UseVisualStyleBackColor = true;
@@ -357,9 +364,9 @@
             // 
             // _player13
             // 
-            this._player13.Location = new System.Drawing.Point(292, 388);
+            this._player13.Location = new System.Drawing.Point(251, 388);
             this._player13.Name = "_player13";
-            this._player13.Size = new System.Drawing.Size(139, 48);
+            this._player13.Size = new System.Drawing.Size(115, 48);
             this._player13.TabIndex = 26;
             this._player13.Text = "player13";
             this._player13.UseVisualStyleBackColor = true;
@@ -367,9 +374,9 @@
             // 
             // _player12
             // 
-            this._player12.Location = new System.Drawing.Point(151, 388);
+            this._player12.Location = new System.Drawing.Point(130, 388);
             this._player12.Name = "_player12";
-            this._player12.Size = new System.Drawing.Size(139, 48);
+            this._player12.Size = new System.Drawing.Size(115, 48);
             this._player12.TabIndex = 25;
             this._player12.Text = "player12";
             this._player12.UseVisualStyleBackColor = true;
@@ -377,22 +384,13 @@
             // 
             // _player11
             // 
-            this._player11.Location = new System.Drawing.Point(10, 388);
+            this._player11.Location = new System.Drawing.Point(9, 388);
             this._player11.Name = "_player11";
-            this._player11.Size = new System.Drawing.Size(139, 48);
+            this._player11.Size = new System.Drawing.Size(115, 48);
             this._player11.TabIndex = 24;
             this._player11.Text = "player11";
             this._player11.UseVisualStyleBackColor = true;
             this._player11.Click += new System.EventHandler(this._player11_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(289, 40);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 30;
-            this.label5.Text = "label5";
             // 
             // contextMenuStrip1
             // 
@@ -436,6 +434,54 @@
             this.GameStatTable.Name = "GameStatTable";
             this.GameStatTable.Size = new System.Drawing.Size(375, 395);
             this.GameStatTable.TabIndex = 32;
+            // 
+            // gamePlayernameColumn
+            // 
+            this.gamePlayernameColumn.HeaderText = "Player Name";
+            this.gamePlayernameColumn.Name = "gamePlayernameColumn";
+            this.gamePlayernameColumn.Width = 113;
+            // 
+            // gamePointsColumn
+            // 
+            this.gamePointsColumn.HeaderText = "PTS";
+            this.gamePointsColumn.Name = "gamePointsColumn";
+            this.gamePointsColumn.Width = 30;
+            // 
+            // gameAssistsColumn
+            // 
+            this.gameAssistsColumn.HeaderText = "AST";
+            this.gameAssistsColumn.Name = "gameAssistsColumn";
+            this.gameAssistsColumn.Width = 30;
+            // 
+            // gameReboundsColumn
+            // 
+            this.gameReboundsColumn.HeaderText = "REB";
+            this.gameReboundsColumn.Name = "gameReboundsColumn";
+            this.gameReboundsColumn.Width = 32;
+            // 
+            // gameStealsColumn
+            // 
+            this.gameStealsColumn.HeaderText = "STL";
+            this.gameStealsColumn.Name = "gameStealsColumn";
+            this.gameStealsColumn.Width = 32;
+            // 
+            // gameBlocksColumn
+            // 
+            this.gameBlocksColumn.HeaderText = "BLK";
+            this.gameBlocksColumn.Name = "gameBlocksColumn";
+            this.gameBlocksColumn.Width = 32;
+            // 
+            // gameTurnoversColumn
+            // 
+            this.gameTurnoversColumn.HeaderText = "TO";
+            this.gameTurnoversColumn.Name = "gameTurnoversColumn";
+            this.gameTurnoversColumn.Width = 32;
+            // 
+            // gameFieldGoalPercentColumn
+            // 
+            this.gameFieldGoalPercentColumn.HeaderText = "FG%";
+            this.gameFieldGoalPercentColumn.Name = "gameFieldGoalPercentColumn";
+            this.gameFieldGoalPercentColumn.Width = 32;
             // 
             // TabSeasonStats
             // 
@@ -514,53 +560,88 @@
             this.fieldGoalPercentColumn.Name = "fieldGoalPercentColumn";
             this.fieldGoalPercentColumn.Width = 32;
             // 
-            // gamePlayernameColumn
+            // lbl_H
             // 
-            this.gamePlayernameColumn.HeaderText = "Player Name";
-            this.gamePlayernameColumn.Name = "gamePlayernameColumn";
-            this.gamePlayernameColumn.Width = 113;
+            this.lbl_H.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_H.Location = new System.Drawing.Point(321, 9);
+            this.lbl_H.MinimumSize = new System.Drawing.Size(40, 30);
+            this.lbl_H.Name = "lbl_H";
+            this.lbl_H.Size = new System.Drawing.Size(51, 30);
+            this.lbl_H.TabIndex = 32;
+            this.lbl_H.Text = "Home";
             // 
-            // gamePointsColumn
+            // lbl_A
             // 
-            this.gamePointsColumn.HeaderText = "PTS";
-            this.gamePointsColumn.Name = "gamePointsColumn";
-            this.gamePointsColumn.Width = 30;
+            this.lbl_A.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_A.Location = new System.Drawing.Point(375, 9);
+            this.lbl_A.MinimumSize = new System.Drawing.Size(40, 30);
+            this.lbl_A.Name = "lbl_A";
+            this.lbl_A.Size = new System.Drawing.Size(51, 30);
+            this.lbl_A.TabIndex = 33;
+            this.lbl_A.Text = "Away";
             // 
-            // gameAssistsColumn
+            // lblHomeScore
             // 
-            this.gameAssistsColumn.HeaderText = "AST";
-            this.gameAssistsColumn.Name = "gameAssistsColumn";
-            this.gameAssistsColumn.Width = 30;
+            this.lblHomeScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHomeScore.Location = new System.Drawing.Point(321, 39);
+            this.lblHomeScore.MinimumSize = new System.Drawing.Size(40, 30);
+            this.lblHomeScore.Name = "lblHomeScore";
+            this.lblHomeScore.Size = new System.Drawing.Size(51, 30);
+            this.lblHomeScore.TabIndex = 34;
+            this.lblHomeScore.Text = "0";
             // 
-            // gameReboundsColumn
+            // lblAwayScore
             // 
-            this.gameReboundsColumn.HeaderText = "REB";
-            this.gameReboundsColumn.Name = "gameReboundsColumn";
-            this.gameReboundsColumn.Width = 32;
+            this.lblAwayScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAwayScore.Location = new System.Drawing.Point(375, 39);
+            this.lblAwayScore.MinimumSize = new System.Drawing.Size(40, 30);
+            this.lblAwayScore.Name = "lblAwayScore";
+            this.lblAwayScore.Size = new System.Drawing.Size(51, 30);
+            this.lblAwayScore.TabIndex = 35;
+            this.lblAwayScore.Text = "0";
             // 
-            // gameStealsColumn
+            // label4
             // 
-            this.gameStealsColumn.HeaderText = "STL";
-            this.gameStealsColumn.Name = "gameStealsColumn";
-            this.gameStealsColumn.Width = 32;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(625, 276);
+            this.label4.MinimumSize = new System.Drawing.Size(40, 30);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(113, 30);
+            this.label4.TabIndex = 36;
+            this.label4.Text = "Opponent Score";
             // 
-            // gameBlocksColumn
+            // _oppnt2ptMade
             // 
-            this.gameBlocksColumn.HeaderText = "BLK";
-            this.gameBlocksColumn.Name = "gameBlocksColumn";
-            this.gameBlocksColumn.Width = 32;
+            this._oppnt2ptMade.BackColor = System.Drawing.Color.Thistle;
+            this._oppnt2ptMade.Location = new System.Drawing.Point(621, 309);
+            this._oppnt2ptMade.Name = "_oppnt2ptMade";
+            this._oppnt2ptMade.Size = new System.Drawing.Size(113, 39);
+            this._oppnt2ptMade.TabIndex = 37;
+            this._oppnt2ptMade.Text = "2pt";
+            this._oppnt2ptMade.UseVisualStyleBackColor = false;
+            this._oppnt2ptMade.Click += new System.EventHandler(this._oppnt2ptMade_Click);
             // 
-            // gameTurnoversColumn
+            // _oppnt3ptMade
             // 
-            this.gameTurnoversColumn.HeaderText = "TO";
-            this.gameTurnoversColumn.Name = "gameTurnoversColumn";
-            this.gameTurnoversColumn.Width = 32;
+            this._oppnt3ptMade.BackColor = System.Drawing.Color.Thistle;
+            this._oppnt3ptMade.Location = new System.Drawing.Point(621, 354);
+            this._oppnt3ptMade.Name = "_oppnt3ptMade";
+            this._oppnt3ptMade.Size = new System.Drawing.Size(113, 39);
+            this._oppnt3ptMade.TabIndex = 38;
+            this._oppnt3ptMade.Text = "3pt";
+            this._oppnt3ptMade.UseVisualStyleBackColor = false;
+            this._oppnt3ptMade.Click += new System.EventHandler(this._oppnt3ptMade_Click);
             // 
-            // gameFieldGoalPercentColumn
+            // _oppntFreethrwMade
             // 
-            this.gameFieldGoalPercentColumn.HeaderText = "FG%";
-            this.gameFieldGoalPercentColumn.Name = "gameFieldGoalPercentColumn";
-            this.gameFieldGoalPercentColumn.Width = 32;
+            this._oppntFreethrwMade.BackColor = System.Drawing.Color.Thistle;
+            this._oppntFreethrwMade.Location = new System.Drawing.Point(621, 393);
+            this._oppntFreethrwMade.Name = "_oppntFreethrwMade";
+            this._oppntFreethrwMade.Size = new System.Drawing.Size(113, 39);
+            this._oppntFreethrwMade.TabIndex = 39;
+            this._oppntFreethrwMade.Text = "Free Throw";
+            this._oppntFreethrwMade.UseVisualStyleBackColor = false;
+            this._oppntFreethrwMade.Click += new System.EventHandler(this._oppntFreethrwMade_Click);
             // 
             // Form1
             // 
@@ -568,8 +649,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1135, 450);
+            this.Controls.Add(this._oppntFreethrwMade);
+            this.Controls.Add(this._oppnt3ptMade);
+            this.Controls.Add(this._oppnt2ptMade);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblAwayScore);
+            this.Controls.Add(this.lblHomeScore);
+            this.Controls.Add(this.lbl_A);
+            this.Controls.Add(this.lbl_H);
             this.Controls.Add(this.TabPanel);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this._player15);
             this.Controls.Add(this._player14);
             this.Controls.Add(this._player13);
@@ -601,13 +689,13 @@
             this.Controls.Add(this._2ptMade);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.TabPanel.ResumeLayout(false);
             this.TabGameStats.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GameStatTable)).EndInit();
             this.TabSeasonStats.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SeasonStatTable)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -642,7 +730,6 @@
         private System.Windows.Forms.Button _player13;
         private System.Windows.Forms.Button _player12;
         private System.Windows.Forms.Button _player11;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.TabControl TabPanel;
         private System.Windows.Forms.TabPage TabGameStats;
@@ -665,6 +752,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn seasonBlockColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn seasonTurnoverColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fieldGoalPercentColumn;
+        private System.Windows.Forms.Label lbl_H;
+        private System.Windows.Forms.Label lbl_A;
+        private System.Windows.Forms.Label lblHomeScore;
+        private System.Windows.Forms.Label lblAwayScore;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button _oppnt2ptMade;
+        private System.Windows.Forms.Button _oppnt3ptMade;
+        private System.Windows.Forms.Button _oppntFreethrwMade;
     }
 }
 
