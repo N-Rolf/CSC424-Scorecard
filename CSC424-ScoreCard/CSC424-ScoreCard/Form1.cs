@@ -23,6 +23,8 @@ namespace CSC424_ScoreCard
         #region Shot made buttons
 
         #region 2pt make/miss Buttons
+
+        //The label for homescore is lblHomeScore
         private void _2ptMade_Click(object sender, EventArgs e)
         {
             
@@ -174,10 +176,32 @@ namespace CSC424_ScoreCard
         {
 
         }
+
         #endregion
 
         #endregion//end playerlist 
 
-        
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        #region Opponent Score
+        private void _oppnt2ptMade_Click(object sender, EventArgs e)
+        {
+            //the label for away score is lblAwayScore
+            
+        }
+
+        private void _oppnt3ptMade_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void _oppntFreethrwMade_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
     }
 }
