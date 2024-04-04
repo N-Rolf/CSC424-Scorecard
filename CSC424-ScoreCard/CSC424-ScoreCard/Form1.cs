@@ -27,7 +27,7 @@ namespace CSC424_ScoreCard
         //The label for homescore is lblHomeScore
         private void _2ptMade_Click(object sender, EventArgs e)
         {
-            
+            lblHomeScore.Text = (int.Parse(lblHomeScore.Text) + 2).ToString();
             
         }
 
@@ -40,7 +40,7 @@ namespace CSC424_ScoreCard
         #region 3pt make/miss buttons 
         private void _3ptMade_Click(object sender, EventArgs e)
         {
-
+            lblHomeScore.Text = (int.Parse(lblHomeScore.Text) + 3).ToString();
         }
 
         private void _3ptMissed_Click(object sender, EventArgs e)
@@ -53,7 +53,7 @@ namespace CSC424_ScoreCard
 
         private void _FreeThrwMade_Click(object sender, EventArgs e)
         {
-
+            lblHomeScore.Text = (int.Parse(lblHomeScore.Text) + 1).ToString();
         }
 
         private void _FreeThrwMissed_Click(object sender, EventArgs e)
@@ -190,17 +190,17 @@ namespace CSC424_ScoreCard
         private void _oppnt2ptMade_Click(object sender, EventArgs e)
         {
             //the label for away score is lblAwayScore
-            
+            lblAwayScore.Text = (int.Parse(lblAwayScore.Text) + 2).ToString();
         }
 
         private void _oppnt3ptMade_Click(object sender, EventArgs e)
         {
-
+            lblAwayScore.Text = (int.Parse(lblAwayScore.Text) + 3).ToString();
         }
 
         private void _oppntFreethrwMade_Click(object sender, EventArgs e)
         {
-
+            lblAwayScore.Text = (int.Parse(lblAwayScore.Text) + 1).ToString();
         }
         #endregion
     }
