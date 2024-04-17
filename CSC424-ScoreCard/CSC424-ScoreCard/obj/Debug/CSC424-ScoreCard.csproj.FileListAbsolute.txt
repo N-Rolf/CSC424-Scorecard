@@ -28,3 +28,13 @@ C:\Users\DSU\source\repos\CSC424-Scorecard\CSC424-ScoreCard\CSC424-ScoreCard\obj
 C:\Users\DSU\source\repos\CSC424-Scorecard\CSC424-ScoreCard\CSC424-ScoreCard\obj\Debug\CSC424-ScoreCard.csproj.CoreCompileInputs.cache
 C:\Users\DSU\source\repos\CSC424-Scorecard\CSC424-ScoreCard\CSC424-ScoreCard\obj\Debug\CSC424-ScoreCard.exe
 C:\Users\DSU\source\repos\CSC424-Scorecard\CSC424-ScoreCard\CSC424-ScoreCard\obj\Debug\CSC424-ScoreCard.pdb
+C:\Users\ubobu\source\repos\CSC424-Scorecard1\CSC424-ScoreCard\CSC424-ScoreCard\bin\Debug\CSC424-ScoreCard.exe.config
+C:\Users\ubobu\source\repos\CSC424-Scorecard1\CSC424-ScoreCard\CSC424-ScoreCard\bin\Debug\CSC424-ScoreCard.exe
+C:\Users\ubobu\source\repos\CSC424-Scorecard1\CSC424-ScoreCard\CSC424-ScoreCard\bin\Debug\CSC424-ScoreCard.pdb
+C:\Users\ubobu\source\repos\CSC424-Scorecard1\CSC424-ScoreCard\CSC424-ScoreCard\obj\Debug\CSC424-ScoreCard.csproj.AssemblyReference.cache
+C:\Users\ubobu\source\repos\CSC424-Scorecard1\CSC424-ScoreCard\CSC424-ScoreCard\obj\Debug\CSC424_ScoreCard.Form1.resources
+C:\Users\ubobu\source\repos\CSC424-Scorecard1\CSC424-ScoreCard\CSC424-ScoreCard\obj\Debug\CSC424_ScoreCard.Properties.Resources.resources
+C:\Users\ubobu\source\repos\CSC424-Scorecard1\CSC424-ScoreCard\CSC424-ScoreCard\obj\Debug\CSC424-ScoreCard.csproj.GenerateResource.cache
+C:\Users\ubobu\source\repos\CSC424-Scorecard1\CSC424-ScoreCard\CSC424-ScoreCard\obj\Debug\CSC424-ScoreCard.csproj.CoreCompileInputs.cache
+C:\Users\ubobu\source\repos\CSC424-Scorecard1\CSC424-ScoreCard\CSC424-ScoreCard\obj\Debug\CSC424-ScoreCard.exe
+C:\Users\ubobu\source\repos\CSC424-Scorecard1\CSC424-ScoreCard\CSC424-ScoreCard\obj\Debug\CSC424-ScoreCard.pdb

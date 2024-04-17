@@ -1,17 +1,24 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\neilr\\source\\repos\\CSC424-Scorecard\\CSC424-ScoreCard\\",
+  "WorkspaceRootPath": "C:\\Users\\ubobu\\source\\repos\\CSC424-Scorecard1\\CSC424-ScoreCard\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{952FB498-B008-4BD2-830C-C83849FAF851}|CSC424-ScoreCard\\CSC424-ScoreCard.csproj|C:\\Users\\neilr\\source\\repos\\CSC424-Scorecard\\CSC424-ScoreCard\\csc424-scorecard\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{952FB498-B008-4BD2-830C-C83849FAF851}|CSC424-ScoreCard\\CSC424-ScoreCard.csproj|solutionrelative:csc424-scorecard\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{952FB498-B008-4BD2-830C-C83849FAF851}|CSC424-ScoreCard\\CSC424-ScoreCard.csproj|c:\\users\\neilr\\source\\repos\\csc424-scorecard\\csc424-scorecard\\csc424-scorecard\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{952FB498-B008-4BD2-830C-C83849FAF851}|CSC424-ScoreCard\\CSC424-ScoreCard.csproj|c:\\users\\ubobu\\source\\repos\\csc424-scorecard1\\csc424-scorecard\\csc424-scorecard\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{952FB498-B008-4BD2-830C-C83849FAF851}|CSC424-ScoreCard\\CSC424-ScoreCard.csproj|solutionrelative:csc424-scorecard\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{952FB498-B008-4BD2-830C-C83849FAF851}|CSC424-ScoreCard\\CSC424-ScoreCard.csproj|C:\\Users\\neilr\\source\\repos\\CSC424-Scorecard\\CSC424-ScoreCard\\csc424-scorecard\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{952FB498-B008-4BD2-830C-C83849FAF851}|CSC424-ScoreCard\\CSC424-ScoreCard.csproj|C:\\Users\\ubobu\\source\\repos\\CSC424-Scorecard1\\CSC424-ScoreCard\\csc424-scorecard\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{952FB498-B008-4BD2-830C-C83849FAF851}|CSC424-ScoreCard\\CSC424-ScoreCard.csproj|solutionrelative:csc424-scorecard\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|CSC424-ScoreCard||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{952FB498-B008-4BD2-830C-C83849FAF851}|CSC424-ScoreCard\\CSC424-ScoreCard.csproj|C:\\Users\\ubobu\\source\\repos\\CSC424-Scorecard1\\CSC424-ScoreCard\\csc424-scorecard\\stats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{952FB498-B008-4BD2-830C-C83849FAF851}|CSC424-ScoreCard\\CSC424-ScoreCard.csproj|solutionrelative:csc424-scorecard\\stats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{952FB498-B008-4BD2-830C-C83849FAF851}|CSC424-ScoreCard\\CSC424-ScoreCard.csproj|C:\\Users\\ubobu\\source\\repos\\CSC424-Scorecard1\\CSC424-ScoreCard\\csc424-scorecard\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{952FB498-B008-4BD2-830C-C83849FAF851}|CSC424-ScoreCard\\CSC424-ScoreCard.csproj|solutionrelative:csc424-scorecard\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -22,45 +29,66 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "Stats.cs",
+              "DocumentMoniker": "C:\\Users\\ubobu\\source\\repos\\CSC424-Scorecard1\\CSC424-ScoreCard\\CSC424-ScoreCard\\Stats.cs",
+              "RelativeDocumentMoniker": "CSC424-ScoreCard\\Stats.cs",
+              "ToolTip": "C:\\Users\\ubobu\\source\\repos\\CSC424-Scorecard1\\CSC424-ScoreCard\\CSC424-ScoreCard\\Stats.cs",
+              "RelativeToolTip": "CSC424-ScoreCard\\Stats.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-10T19:52:44.308Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CSC424-ScoreCard",
+              "DocumentMoniker": "C:\\Users\\ubobu\\source\\repos\\CSC424-Scorecard1\\CSC424-ScoreCard\\CSC424-ScoreCard\\CSC424-ScoreCard.csproj",
+              "RelativeDocumentMoniker": "CSC424-ScoreCard\\CSC424-ScoreCard.csproj",
+              "ToolTip": "C:\\Users\\ubobu\\source\\repos\\CSC424-Scorecard1\\CSC424-ScoreCard\\CSC424-ScoreCard\\CSC424-ScoreCard.csproj",
+              "RelativeToolTip": "CSC424-ScoreCard\\CSC424-ScoreCard.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-04-10T18:17:54.491Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\neilr\\source\\repos\\CSC424-Scorecard\\CSC424-ScoreCard\\CSC424-ScoreCard\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\ubobu\\source\\repos\\CSC424-Scorecard1\\CSC424-ScoreCard\\CSC424-ScoreCard\\Form1.cs",
               "RelativeDocumentMoniker": "CSC424-ScoreCard\\Form1.cs",
-              "ToolTip": "C:\\Users\\neilr\\source\\repos\\CSC424-Scorecard\\CSC424-ScoreCard\\CSC424-ScoreCard\\Form1.cs",
+              "ToolTip": "C:\\Users\\ubobu\\source\\repos\\CSC424-Scorecard1\\CSC424-ScoreCard\\CSC424-ScoreCard\\Form1.cs",
               "RelativeToolTip": "CSC424-ScoreCard\\Form1.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAAAL8AAAAsAAAA",
+              "ViewState": "AQIAAJgCAAAAAAAAAAAcwM8CAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-04T15:22:14.637Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\neilr\\source\\repos\\CSC424-Scorecard\\CSC424-ScoreCard\\CSC424-ScoreCard\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\ubobu\\source\\repos\\CSC424-Scorecard1\\CSC424-ScoreCard\\CSC424-ScoreCard\\Form1.cs",
               "RelativeDocumentMoniker": "CSC424-ScoreCard\\Form1.cs",
-              "ToolTip": "C:\\Users\\neilr\\source\\repos\\CSC424-Scorecard\\CSC424-ScoreCard\\CSC424-ScoreCard\\Form1.cs [Design]",
+              "ToolTip": "C:\\Users\\ubobu\\source\\repos\\CSC424-Scorecard1\\CSC424-ScoreCard\\CSC424-ScoreCard\\Form1.cs [Design]",
               "RelativeToolTip": "CSC424-ScoreCard\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T15:22:14.713Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-04-04T15:22:14.713Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\neilr\\source\\repos\\CSC424-Scorecard\\CSC424-ScoreCard\\CSC424-ScoreCard\\Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\ubobu\\source\\repos\\CSC424-Scorecard1\\CSC424-ScoreCard\\CSC424-ScoreCard\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "CSC424-ScoreCard\\Form1.Designer.cs",
-              "ToolTip": "C:\\Users\\neilr\\source\\repos\\CSC424-Scorecard\\CSC424-ScoreCard\\CSC424-ScoreCard\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\ubobu\\source\\repos\\CSC424-Scorecard1\\CSC424-ScoreCard\\CSC424-ScoreCard\\Form1.Designer.cs",
               "RelativeToolTip": "CSC424-ScoreCard\\Form1.Designer.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-04T15:22:14.714Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-04T15:22:14.714Z"
             }
           ]
         }
