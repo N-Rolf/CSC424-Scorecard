@@ -61,6 +61,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.TabPanel = new System.Windows.Forms.TabControl();
             this.TabGameStats = new System.Windows.Forms.TabPage();
+            this.gameComplete = new System.Windows.Forms.Button();
             this.GameStatTable = new System.Windows.Forms.DataGridView();
             this.gamePlayernameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gamePointsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -121,12 +122,18 @@
             this.team2 = new System.Windows.Forms.Button();
             this.tournamentInput = new System.Windows.Forms.TextBox();
             this.team1 = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.ResetPreviousGames = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.TabPanel.SuspendLayout();
             this.TabGameStats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GameStatTable)).BeginInit();
             this.TabSeasonStats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SeasonStatTable)).BeginInit();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // _2ptMade
@@ -438,14 +445,16 @@
             this.TabPanel.Controls.Add(this.TabGameStats);
             this.TabPanel.Controls.Add(this.TabSeasonStats);
             this.TabPanel.Controls.Add(this.tabPage1);
+            this.TabPanel.Controls.Add(this.tabPage2);
             this.TabPanel.Location = new System.Drawing.Point(9, 12);
             this.TabPanel.Name = "TabPanel";
             this.TabPanel.SelectedIndex = 0;
-            this.TabPanel.Size = new System.Drawing.Size(1114, 424);
+            this.TabPanel.Size = new System.Drawing.Size(1114, 433);
             this.TabPanel.TabIndex = 31;
             // 
             // TabGameStats
             // 
+            this.TabGameStats.Controls.Add(this.gameComplete);
             this.TabGameStats.Controls.Add(this.GameStatTable);
             this.TabGameStats.Controls.Add(this.lbl_A);
             this.TabGameStats.Controls.Add(this._oppntFreethrwMade);
@@ -487,10 +496,21 @@
             this.TabGameStats.Location = new System.Drawing.Point(4, 22);
             this.TabGameStats.Name = "TabGameStats";
             this.TabGameStats.Padding = new System.Windows.Forms.Padding(3);
-            this.TabGameStats.Size = new System.Drawing.Size(1106, 398);
+            this.TabGameStats.Size = new System.Drawing.Size(1106, 407);
             this.TabGameStats.TabIndex = 0;
             this.TabGameStats.Text = "Game";
             this.TabGameStats.UseVisualStyleBackColor = true;
+            // 
+            // gameComplete
+            // 
+            this.gameComplete.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.gameComplete.Location = new System.Drawing.Point(8, 12);
+            this.gameComplete.Name = "gameComplete";
+            this.gameComplete.Size = new System.Drawing.Size(103, 36);
+            this.gameComplete.TabIndex = 40;
+            this.gameComplete.Text = "Game Complete";
+            this.gameComplete.UseVisualStyleBackColor = false;
+            this.gameComplete.Click += new System.EventHandler(this.gameComplete_Click);
             // 
             // GameStatTable
             // 
@@ -560,7 +580,7 @@
             // lbl_A
             // 
             this.lbl_A.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_A.Location = new System.Drawing.Point(362, -9);
+            this.lbl_A.Location = new System.Drawing.Point(359, 12);
             this.lbl_A.MinimumSize = new System.Drawing.Size(40, 30);
             this.lbl_A.Name = "lbl_A";
             this.lbl_A.Size = new System.Drawing.Size(51, 30);
@@ -581,7 +601,7 @@
             // lbl_H
             // 
             this.lbl_H.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_H.Location = new System.Drawing.Point(305, -9);
+            this.lbl_H.Location = new System.Drawing.Point(302, 12);
             this.lbl_H.MinimumSize = new System.Drawing.Size(40, 30);
             this.lbl_H.Name = "lbl_H";
             this.lbl_H.Size = new System.Drawing.Size(51, 30);
@@ -623,7 +643,7 @@
             // lblAwayScore
             // 
             this.lblAwayScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAwayScore.Location = new System.Drawing.Point(362, 21);
+            this.lblAwayScore.Location = new System.Drawing.Point(359, 42);
             this.lblAwayScore.MinimumSize = new System.Drawing.Size(40, 30);
             this.lblAwayScore.Name = "lblAwayScore";
             this.lblAwayScore.Size = new System.Drawing.Size(51, 30);
@@ -633,7 +653,7 @@
             // lblHomeScore
             // 
             this.lblHomeScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHomeScore.Location = new System.Drawing.Point(302, 21);
+            this.lblHomeScore.Location = new System.Drawing.Point(299, 42);
             this.lblHomeScore.MinimumSize = new System.Drawing.Size(40, 30);
             this.lblHomeScore.Name = "lblHomeScore";
             this.lblHomeScore.Size = new System.Drawing.Size(51, 30);
@@ -646,7 +666,7 @@
             this.TabSeasonStats.Location = new System.Drawing.Point(4, 22);
             this.TabSeasonStats.Name = "TabSeasonStats";
             this.TabSeasonStats.Padding = new System.Windows.Forms.Padding(3);
-            this.TabSeasonStats.Size = new System.Drawing.Size(1106, 398);
+            this.TabSeasonStats.Size = new System.Drawing.Size(1106, 407);
             this.TabSeasonStats.TabIndex = 1;
             this.TabSeasonStats.Text = "Season";
             this.TabSeasonStats.UseVisualStyleBackColor = true;
@@ -755,7 +775,7 @@
             this.tabPage1.Cursor = System.Windows.Forms.Cursors.Cross;
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(1106, 398);
+            this.tabPage1.Size = new System.Drawing.Size(1106, 407);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Tournament";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1107,12 +1127,52 @@
             this.team1.Visible = false;
             this.team1.Click += new System.EventHandler(this.team1_Click);
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Controls.Add(this.comboBox1);
+            this.tabPage2.Controls.Add(this.ResetPreviousGames);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1106, 407);
+            this.tabPage2.TabIndex = 3;
+            this.tabPage2.Text = "Previous Games";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // ResetPreviousGames
+            // 
+            this.ResetPreviousGames.BackColor = System.Drawing.Color.IndianRed;
+            this.ResetPreviousGames.Location = new System.Drawing.Point(1025, 378);
+            this.ResetPreviousGames.Name = "ResetPreviousGames";
+            this.ResetPreviousGames.Size = new System.Drawing.Size(75, 23);
+            this.ResetPreviousGames.TabIndex = 0;
+            this.ResetPreviousGames.Text = "Reset All";
+            this.ResetPreviousGames.UseVisualStyleBackColor = false;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(6, 6);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(128, 21);
+            this.comboBox1.TabIndex = 1;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(181, 6);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(411, 395);
+            this.dataGridView1.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1135, 450);
+            this.ClientSize = new System.Drawing.Size(1135, 461);
             this.Controls.Add(this.TabPanel);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -1124,6 +1184,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.SeasonStatTable)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1222,6 +1284,11 @@
         private System.Windows.Forms.Button team4;
         private System.Windows.Forms.Button team3;
         private System.Windows.Forms.Button team2;
+        private System.Windows.Forms.Button gameComplete;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button ResetPreviousGames;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

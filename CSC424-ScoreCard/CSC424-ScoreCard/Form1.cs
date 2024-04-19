@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -428,7 +429,7 @@ namespace CSC424_ScoreCard
         {
 
         }
-
+        #region Bracket Buttons
         private void team1_Click(object sender, EventArgs e)
         {
             team2.Enabled = false;
@@ -775,6 +776,20 @@ namespace CSC424_ScoreCard
         private void winnerLabel_Click(object sender, EventArgs e)
         {
 
+        }
+        #endregion
+
+        private void gameComplete_Click(object sender, EventArgs e)
+        {
+            
+                
+            
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
