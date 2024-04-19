@@ -25,7 +25,7 @@ namespace CSC424_ScoreCard
                     string playerName = entry.Key;
                     foreach (var historyEntry in entry.Value)
                     {
-                        writer.WriteLine($"{playerName}, {historyEntry.Points}, {historyEntry.Steals}, {historyEntry.Blocks}, {historyEntry.Assists}, {historyEntry.Rebound}, {historyEntry.Turnover}, {historyEntry.FieldGoal}");
+                        writer.WriteLine($"{playerName}, {historyEntry.Points}, {historyEntry.Steals}, {historyEntry.Blocks}, {historyEntry.Assists}, {historyEntry.Rebound}, {historyEntry.Turnover}, {historyEntry.FieldGoal}, {historyEntry.MadeFieldGoals}, {historyEntry.AttemptFieldGoals}");
                     }
                 }
             }
@@ -43,7 +43,7 @@ namespace CSC424_ScoreCard
                     while ((line = reader.ReadLine()) != null)
                     {
                         string[] parts = line.Split(',');
-                        if (parts.Length >= 8)
+                        if (parts.Length >= 10)
                         {
                             string playerName = parts[0].Trim(); 
                             int points = int.Parse(parts[1].Trim());
@@ -53,13 +53,15 @@ namespace CSC424_ScoreCard
                             int rebound = int.Parse(parts[5].Trim());
                             int turnover = int.Parse(parts[6].Trim());
                             double fieldgoal = double.Parse(parts[7].Trim());
+                            int madeFieldGoals = int.Parse(parts[8].Trim());
+                            int attemptedFieldGoals = int.Parse((parts[9].Trim()).Trim());
 
                             if (!userHistory.ContainsKey(playerName))
                             {
                                 userHistory[playerName] = new List<HistoryEntry>();
                             }
 
-                            userHistory[playerName].Add(new HistoryEntry { Points = points, Steals = steals, Blocks = blocks, Assists = assists, Rebound = rebound, Turnover = turnover, FieldGoal = fieldgoal });
+                            userHistory[playerName].Add(new HistoryEntry { Points = points, Steals = steals, Blocks = blocks, Assists = assists, Rebound = rebound, Turnover = turnover, FieldGoal = fieldgoal, MadeFieldGoals = madeFieldGoals, AttemptFieldGoals = attemptedFieldGoals });
                         }
                     }
                 }
@@ -80,5 +82,7 @@ namespace CSC424_ScoreCard
         public int Rebound { get; set; }
         public int Turnover { get; set; }
         public double FieldGoal { get; set; }
+        public int MadeFieldGoals { get; set; }
+        public int AttemptFieldGoals { get; set; }
     }
 }
