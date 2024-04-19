@@ -123,9 +123,10 @@
             this.tournamentInput = new System.Windows.Forms.TextBox();
             this.team1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.ResetPreviousGames = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.ResetPreviousGames = new System.Windows.Forms.Button();
+            this.playerStatsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.TabPanel.SuspendLayout();
             this.TabGameStats.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GameStatTable)).BeginInit();
@@ -134,6 +135,7 @@
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerStatsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // _2ptMade
@@ -1140,6 +1142,24 @@
             this.tabPage2.Text = "Previous Games";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(181, 6);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(411, 395);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.playerStatsBindingSource;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(6, 6);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(128, 21);
+            this.comboBox1.TabIndex = 1;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // ResetPreviousGames
             // 
             this.ResetPreviousGames.BackColor = System.Drawing.Color.IndianRed;
@@ -1150,22 +1170,9 @@
             this.ResetPreviousGames.Text = "Reset All";
             this.ResetPreviousGames.UseVisualStyleBackColor = false;
             // 
-            // comboBox1
+            // playerStatsBindingSource
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 6);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(128, 21);
-            this.comboBox1.TabIndex = 1;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(181, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(411, 395);
-            this.dataGridView1.TabIndex = 2;
+            this.playerStatsBindingSource.DataSource = typeof(CSC424_ScoreCard.Form1.PlayerStats);
             // 
             // Form1
             // 
@@ -1186,6 +1193,7 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerStatsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1289,6 +1297,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button ResetPreviousGames;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource playerStatsBindingSource;
     }
 }
 

@@ -781,15 +781,59 @@ namespace CSC424_ScoreCard
 
         private void gameComplete_Click(object sender, EventArgs e)
         {
-            
-                
-            
+            //new object based on the GameStatTable
+            var gameStats = new List<GameStats>();
 
+            
+            foreach (DataGridViewRow row in GameStatTable.Rows)
+            {
+                string playerName = row.Cells[0].Value.ToString();
+                int points = int.Parse(row.Cells[1].Value.ToString());
+                int assists = int.Parse(row.Cells[2].Value.ToString());
+                int rebound = int.Parse(row.Cells[3].Value.ToString());
+                int steals = int.Parse(row.Cells[4].Value.ToString());
+                int blocks = int.Parse(row.Cells[5].Value.ToString());
+                int turnovers = int.Parse(row.Cells[6].Value.ToString());
+
+                //create the object
+                var playerStats = new PlayerStats
+                {
+                    Points = points,
+                    Assists = assists,
+                    Rebound = rebound,
+                    Steals = steals,
+                    Blocks = blocks,
+                    Turnovers = turnovers
+                };
+
+                gameStats.Add(new GameStats(playerName, playerStats));
+            }
+
+            
+        }
+
+        public class GameStats
+        {
+            public string PlayerName { get; set; }
+            public PlayerStats PlayerStats { get; set; }
+
+            public GameStats(string playerName, PlayerStats playerStats)
+            {
+                PlayerName = playerName;
+                PlayerStats = playerStats;
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+            comboBox1.Items.Clear();
+
+            foreach (var playerStat in playerStats)
+            {
+                comboBox1.Items.Add(playerStat.Key);
+            }
+
         }
     }
 }
