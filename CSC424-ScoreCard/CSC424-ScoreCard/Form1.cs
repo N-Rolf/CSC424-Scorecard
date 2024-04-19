@@ -52,7 +52,9 @@ namespace CSC424_ScoreCard
                                       playerStat.Value.Steals,
                                       playerStat.Value.Blocks,
                                       playerStat.Value.Turnovers,
-                                      playerStat.Value.FieldGoal);
+                                      playerStat.Value.FieldGoal,
+                                      playerStat.Value.MadeFieldGoals,
+                                      playerStat.Value.AttemptFieldGoals);
             }
 
             UpdateSeasonStatsTable();
@@ -81,7 +83,9 @@ namespace CSC424_ScoreCard
                                                   latestEntry.Steals,
                                                   latestEntry.Blocks,
                                                   latestEntry.Turnover,
-                                                  latestEntry.FieldGoal);
+                                                  latestEntry.FieldGoal,
+                                                  latestEntry.MadeFieldGoals,
+                                                  latestEntry.AttemptFieldGoals);
 
                         addedPlayers.Add(playerName);
                     }
@@ -106,7 +110,9 @@ namespace CSC424_ScoreCard
                         Steals = playerStat.Value.Steals,
                         Blocks = playerStat.Value.Blocks,
                         Turnover = playerStat.Value.Turnovers,
-                        FieldGoal = playerStat.Value.FieldGoalPercentage
+                        FieldGoal = playerStat.Value.FieldGoalPercentage,
+                        MadeFieldGoals = playerStat.Value.MadeFieldGoals,
+                        AttemptFieldGoals = playerStat.Value.AttemptFieldGoals
                     });
 
                 }
@@ -122,7 +128,9 @@ namespace CSC424_ScoreCard
                     Steals = playerStat.Value.Steals,
                     Blocks = playerStat.Value.Blocks,
                     Turnover = playerStat.Value.Turnovers,
-                    FieldGoal = playerStat.Value.FieldGoalPercentage
+                    FieldGoal = playerStat.Value.FieldGoalPercentage,
+                    MadeFieldGoals = playerStat.Value.MadeFieldGoals,
+                    AttemptFieldGoals = playerStat.Value.AttemptFieldGoals
                 }
             };
                 }
