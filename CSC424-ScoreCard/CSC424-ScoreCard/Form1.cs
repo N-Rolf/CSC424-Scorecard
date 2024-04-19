@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static CSC424_ScoreCard.Form1;
 
 namespace CSC424_ScoreCard
 {
@@ -17,11 +18,16 @@ namespace CSC424_ScoreCard
         int tournmentCounter = 0;
 
         Dictionary<string, PlayerStats> playerStats = new Dictionary<string, PlayerStats>();
+        Dictionary<string, List<HistoryEntry>> userHistory = Stats.LoadUserScores();
         public Form1()
         {
             InitializeComponent();
             InitializePlayerStats();
+            UpdateGameStatTable();
+            DisableActionControls();
         }
+
+
         private string selectedPlayerName;
 
         private void InitializePlayerStats()
@@ -35,10 +41,8 @@ namespace CSC424_ScoreCard
 
         private void UpdateGameStatTable()
         {
-            // Clear existing rows
             GameStatTable.Rows.Clear();
 
-            // Add rows for each player
             foreach (var playerStat in playerStats)
             {
                 GameStatTable.Rows.Add(playerStat.Key,
@@ -47,9 +51,117 @@ namespace CSC424_ScoreCard
                                       playerStat.Value.Rebound,
                                       playerStat.Value.Steals,
                                       playerStat.Value.Blocks,
-                                      playerStat.Value.Turnovers);
+                                      playerStat.Value.Turnovers,
+                                      playerStat.Value.FieldGoal);
+            }
+
+            UpdateSeasonStatsTable();
+            SaveUserScores();
+        }
+
+        private void UpdateSeasonStatsTable()
+        {
+            SeasonStatTable.Rows.Clear();
+
+            HashSet<string> addedPlayers = new HashSet<string>();
+
+            foreach (var entry in userHistory)
+            {
+                string playerName = entry.Key;
+
+                if (!addedPlayers.Contains(playerName))
+                {
+                    var latestEntry = entry.Value.LastOrDefault();
+                    if (latestEntry != null)
+                    {
+                        SeasonStatTable.Rows.Add(playerName,
+                                                  latestEntry.Points,
+                                                  latestEntry.Assists,
+                                                  latestEntry.Rebound,
+                                                  latestEntry.Steals,
+                                                  latestEntry.Blocks,
+                                                  latestEntry.Turnover,
+                                                  latestEntry.FieldGoal);
+
+                        addedPlayers.Add(playerName);
+                    }
+                }
             }
         }
+
+        private void SaveUserScores()
+        {
+            foreach (var playerStat in playerStats)
+            {
+
+                if (userHistory.ContainsKey(playerStat.Key))
+                {
+
+                    var playerHistory = userHistory[playerStat.Key];
+                    playerHistory.Add(new HistoryEntry
+                    {
+                        Points = playerStat.Value.Points,
+                        Assists = playerStat.Value.Assists,
+                        Rebound = playerStat.Value.Rebound,
+                        Steals = playerStat.Value.Steals,
+                        Blocks = playerStat.Value.Blocks,
+                        Turnover = playerStat.Value.Turnovers,
+                        FieldGoal = playerStat.Value.FieldGoalPercentage
+                    });
+
+                }
+                else
+                {
+                    userHistory[playerStat.Key] = new List<HistoryEntry>
+            {
+                new HistoryEntry
+                {
+                    Points = playerStat.Value.Points,
+                    Assists = playerStat.Value.Assists,
+                    Rebound = playerStat.Value.Rebound,
+                    Steals = playerStat.Value.Steals,
+                    Blocks = playerStat.Value.Blocks,
+                    Turnover = playerStat.Value.Turnovers,
+                    FieldGoal = playerStat.Value.FieldGoalPercentage
+                }
+            };
+                }
+            }
+
+            Stats.SaveUserScores(userHistory);
+        }
+
+
+        private void DisableActionControls()
+        {
+            _2ptMade.Enabled = false;
+            _2ptMissed.Enabled = false;
+            _3ptMade.Enabled = false;
+            _3ptMissed.Enabled = false;
+            _FreeThrwMade.Enabled = false;
+            _FreeThrwMissed.Enabled = false;
+            _Rebound.Enabled = false;
+            _Steal.Enabled = false;
+            _TurnOver.Enabled = false;
+            _Assist.Enabled = false;
+            _Block.Enabled = false;
+        }
+
+        private void EnableActionControls()
+        {
+            _2ptMade.Enabled = true;
+            _2ptMissed.Enabled = true;
+            _3ptMade.Enabled = true;
+            _3ptMissed.Enabled = true;
+            _FreeThrwMade.Enabled = true;
+            _FreeThrwMissed.Enabled = true;
+            _Rebound.Enabled = true;
+            _Steal.Enabled = true;
+            _TurnOver.Enabled = true;
+            _Assist.Enabled = true;
+            _Block.Enabled = true;
+        }
+
         //TODO Table NO longer subject to change.
 
         #region Shot made buttons
@@ -61,13 +173,18 @@ namespace CSC424_ScoreCard
         {
             lblHomeScore.Text = (int.Parse(lblHomeScore.Text) + 2).ToString();
             playerStats[selectedPlayerName].Points += 2;
+            playerStats[selectedPlayerName].MadeFieldGoals++;
+            playerStats[selectedPlayerName].AttemptFieldGoals++;
+            FieldGoalPercentage(sender, e);
             UpdateGameStatTable();
 
         }
 
         private void _2ptMissed_Click(object sender, EventArgs e)
         {
-
+            playerStats[selectedPlayerName].AttemptFieldGoals++;
+            FieldGoalPercentage(sender, e);
+            UpdateGameStatTable();
         }
         #endregion
 
@@ -76,12 +193,17 @@ namespace CSC424_ScoreCard
         {
             lblHomeScore.Text = (int.Parse(lblHomeScore.Text) + 3).ToString();
             playerStats[selectedPlayerName].Points += 3;
+            playerStats[selectedPlayerName].MadeFieldGoals++;
+            playerStats[selectedPlayerName].AttemptFieldGoals++;
+            FieldGoalPercentage(sender, e);
             UpdateGameStatTable();
         }
 
         private void _3ptMissed_Click(object sender, EventArgs e)
         {
-
+            playerStats[selectedPlayerName].AttemptFieldGoals++;
+            FieldGoalPercentage(sender, e);
+            UpdateGameStatTable();
         }
         #endregion
 
@@ -91,12 +213,17 @@ namespace CSC424_ScoreCard
         {
             lblHomeScore.Text = (int.Parse(lblHomeScore.Text) + 1).ToString();
             playerStats[selectedPlayerName].Points += 1;
+            playerStats[selectedPlayerName].MadeFieldGoals++;
+            playerStats[selectedPlayerName].AttemptFieldGoals++;
+            FieldGoalPercentage(sender, e);
             UpdateGameStatTable();
         }
 
         private void _FreeThrwMissed_Click(object sender, EventArgs e)
         {
-
+            playerStats[selectedPlayerName].AttemptFieldGoals++;
+            FieldGoalPercentage(sender, e);
+            UpdateGameStatTable();
         }
 
         #endregion
@@ -133,20 +260,32 @@ namespace CSC424_ScoreCard
             playerStats[selectedPlayerName].Turnovers += 1;
             UpdateGameStatTable();
         }
+
+        private void FieldGoalPercentage(object sender, EventArgs e)
+        {
+
+            if (playerStats[selectedPlayerName].AttemptFieldGoals == 0)
+            {
+                playerStats[selectedPlayerName].FieldGoal = 0;
+            }
+            else
+            {
+                playerStats[selectedPlayerName].FieldGoal = (double)playerStats[selectedPlayerName].MadeFieldGoals / playerStats[selectedPlayerName].AttemptFieldGoals * 100;
+            }
+            UpdateGameStatTable();
+        }
         #endregion
 
 
         #region player list
 
         #region players 1-7
-        
+
         private void _player1_Click(object sender, EventArgs e)
         {
-            //Rows can be updated with (Game/SeasonStatTable).RowCount = number; 
-            //So rows can be added as you add players.
             Button clickedButton = (Button)sender;
             selectedPlayerName = "Player 1";
-
+            EnableActionControls();
             UpdateGameStatTable();
         }
 
@@ -154,7 +293,7 @@ namespace CSC424_ScoreCard
         {
             Button clickedButton = (Button)sender;
             selectedPlayerName = "Player 2";
-
+            EnableActionControls();
             UpdateGameStatTable();
         }
 
@@ -162,7 +301,7 @@ namespace CSC424_ScoreCard
         {
             Button clickedButton = (Button)sender;
             selectedPlayerName = "Player 3";
-
+            EnableActionControls();
             UpdateGameStatTable();
         }
 
@@ -170,7 +309,7 @@ namespace CSC424_ScoreCard
         {
             Button clickedButton = (Button)sender;
             selectedPlayerName = "Player 4";
-
+            EnableActionControls();
             UpdateGameStatTable();
         }
 
@@ -178,7 +317,7 @@ namespace CSC424_ScoreCard
         {
             Button clickedButton = (Button)sender;
             selectedPlayerName = "Player 5";
-
+            EnableActionControls();
             UpdateGameStatTable();
         }
 
@@ -186,7 +325,7 @@ namespace CSC424_ScoreCard
         {
             Button clickedButton = (Button)sender;
             selectedPlayerName = "Player 6";
-
+            EnableActionControls();
             UpdateGameStatTable();
 
         }
@@ -195,7 +334,7 @@ namespace CSC424_ScoreCard
         {
             Button clickedButton = (Button)sender;
             selectedPlayerName = "Player 7";
-
+            EnableActionControls();
             UpdateGameStatTable();
 
         }
@@ -207,7 +346,7 @@ namespace CSC424_ScoreCard
         {
             Button clickedButton = (Button)sender;
             selectedPlayerName = "Player 8";
-
+            EnableActionControls();
             UpdateGameStatTable();
         }
 
@@ -215,7 +354,7 @@ namespace CSC424_ScoreCard
         {
             Button clickedButton = (Button)sender;
             selectedPlayerName = "Player 9";
-
+            EnableActionControls();
             UpdateGameStatTable();
         }
 
@@ -223,7 +362,7 @@ namespace CSC424_ScoreCard
         {
             Button clickedButton = (Button)sender;
             selectedPlayerName = "Player 10";
-
+            EnableActionControls();
             UpdateGameStatTable();
         }
 
@@ -231,7 +370,7 @@ namespace CSC424_ScoreCard
         {
             Button clickedButton = (Button)sender;
             selectedPlayerName = "Player 11";
-
+            EnableActionControls();
             UpdateGameStatTable();
         }
 
@@ -239,7 +378,7 @@ namespace CSC424_ScoreCard
         {
             Button clickedButton = (Button)sender;
             selectedPlayerName = "Player 12";
-
+            EnableActionControls();
             UpdateGameStatTable();
         }
 
@@ -247,7 +386,7 @@ namespace CSC424_ScoreCard
         {
             Button clickedButton = (Button)sender;
             selectedPlayerName = "Player 13";
-
+            EnableActionControls();
             UpdateGameStatTable();
         }
 
@@ -255,7 +394,7 @@ namespace CSC424_ScoreCard
         {
             Button clickedButton = (Button)sender;
             selectedPlayerName = "Player 14";
-
+            EnableActionControls();
             UpdateGameStatTable();
         }
 
@@ -263,7 +402,7 @@ namespace CSC424_ScoreCard
         {
             Button clickedButton = (Button)sender;
             selectedPlayerName = "Player 15";
-
+            EnableActionControls();
             UpdateGameStatTable();
         }
 
@@ -417,6 +556,24 @@ namespace CSC424_ScoreCard
             public int Steals { get; set; }
             public int Points { get; set; }
             public int Blocks { get; set; }
+            public double FieldGoal { get; set; }
+            public int MadeFieldGoals { get; set; }
+            public int AttemptFieldGoals { get; set; }
+
+            public double FieldGoalPercentage
+            {
+                get
+                {
+                    if (AttemptFieldGoals == 0)
+                    {
+                        return 0;
+                    }
+                    else
+                    {
+                        return (double)MadeFieldGoals / AttemptFieldGoals * 100;
+                    }
+                }
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
